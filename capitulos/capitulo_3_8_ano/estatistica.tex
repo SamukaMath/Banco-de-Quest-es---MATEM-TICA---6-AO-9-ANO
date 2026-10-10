@@ -1,0 +1,222 @@
+\section{Probabilidade e Estatística}
+
+\questao{O quadriculado $3\times3$ preenchido com números inteiros recebe o nome de medmágico quando, em cada linha horizontal, vertical ou diagonal, o número central funciona como a média aritmética dos dois números que estão nas extremidades.}
+
+        \begin{flushright}
+            {\renewcommand{\arraystretch}{1.5}
+            \begin{tabular}{
+                |>{\centering\arraybackslash}m{.5cm}|>{\centering\arraybackslash}m{.5cm}|>{\centering\arraybackslash}m{.5cm}|
+                }
+                 \hline
+                 11& 15 & 19 \\\hline
+                 6 & 10 & 14\\ \hline
+                 1 & 5  & 9\\ \hline
+            \end{tabular}}
+        \end{flushright}
+
+        \begin{enumerate}[label=\alph*)]
+            \item Preencha o quadriculado abaixo para que ele seja medmágico.
+            \vspace{10pt}
+           
+            {\renewcommand{\arraystretch}{1.5}
+            \begin{tabular}{
+                |>{\centering\arraybackslash}m{.5cm}|>{\centering\arraybackslash}m{.5cm}|>{\centering\arraybackslash}m{.5cm}|
+                }
+                 \hline
+                 4&  & 18 \\\hline
+                 8&  & \\ \hline
+                  &  & \\ \hline
+            \end{tabular}}
+
+            \vspace{1cm}
+
+            \item Em um quadriculado medmágico $3\times3$, os números 9, 8 e 25 ocupam as posições mostradas na figura. Determine o valor de x.
+
+            
+            {\renewcommand{\arraystretch}{1.5}
+            \begin{tabular}{
+                |>{\centering\arraybackslash}p{.5cm}|>{\centering\arraybackslash}p{.5cm}|>{\centering\arraybackslash}p{.5cm}|
+                }
+                 \hline
+                 & 9 &  \\\hline
+                 8& x & \\ \hline
+                  &  & 25\\ \hline
+            \end{tabular}}
+
+            \vspace{1cm}
+
+            \item Justifique por que, em qualquer quadriculado medmágico, a soma dos nove valores sempre resulta em um múltiplo de 9.
+
+        \end{enumerate}
+
+\begin{solucoes}{1}
+    \solucao
+    \textbf{item a)}
+
+\begin{figure}[H]
+    \begin{minipage}{.7\linewidth}
+        Para facilitar, colocamos letras nas casas vazias:
+
+        O número a deve ser a média dos números 3 e 19:
+    \end{minipage}
+    \begin{minipage}{.25\linewidth}
+        {\renewcommand{\arraystretch}{1.5}
+            \begin{tabular}{
+                |>{\centering\arraybackslash}m{.5cm}|>{\centering\arraybackslash}m{.5cm}|>{\centering\arraybackslash}m{.5cm}|
+                }
+                 \hline
+                 4& a & 18 \\\hline
+                 8& c & d\\ \hline
+                 b & e & f\\ \hline
+            \end{tabular}}
+    \end{minipage}
+\end{figure}
+
+$a = \cfrac{4+18}{2} = 11$
+
+O número 8 deve ser a média entre 4 e b, ou seja:
+
+$\cfrac{4+b}{2} = 8 \Rightarrow 4 + b = 8\times2 \Rightarrow b = 16 - 4 \Rightarrow b = 12$ 
+
+Logo, $b = 12$
+
+O número c deve ser a média entre 18 e 12: $c = \cfrac{18+12}{2} \Rightarrow c = \cfrac{30}{2} \Rightarrow c = 15$
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{
+    |>{\centering\arraybackslash}m{.5cm}|>{\centering\arraybackslash}m{.5cm}|>{\centering\arraybackslash}m{.5cm}|
+    }
+     \hline
+     4& \textbf{11} & 18 \\\hline
+     8& \textbf{15} & d\\ \hline
+     \textbf{12} & e & f\\ \hline
+\end{tabular}}
+
+\vspace{20pt}
+
+Analogamente,
+
+$
+\begin{cases}
+    \cfrac{d + 8}{2} = 15 \Rightarrow d + 8 = 30 \Rightarrow d = 22\\
+    \cfrac{e + 11}{2}=15 \Rightarrow e + 11 = 30 \Rightarrow e = 19\\
+    \cfrac{f + 4}{2} = 15 \Rightarrow f + 4 = 30 \Rightarrow f = 26
+\end{cases}$
+
+Portanto, o preenchimento final do quadriculado medmágico é:
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{
+    |>{\centering\arraybackslash}m{.5cm}|>{\centering\arraybackslash}m{.5cm}|>{\centering\arraybackslash}m{.5cm}|
+    }
+     \hline
+     4& \textbf{11} & 18 \\\hline
+     8& \textbf{15} & \textbf{22}\\ \hline
+     \textbf{12} & \textbf{19} & \textbf{26}\\ \hline
+\end{tabular}}
+
+\solucao
+
+\textbf{item b)}
+
+Primeiramente, colocamos letras nas casas vazias, de acordo com a figura abaixo:
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{
+    |>{\centering\arraybackslash}p{.5cm}|>{\centering\arraybackslash}p{.5cm}|>{\centering\arraybackslash}p{.5cm}|
+    }
+     \hline
+     y& 9 &v  \\\hline
+     8& x & w\\ \hline
+      t& z & 25\\ \hline
+\end{tabular}}
+
+Calculando as médias, obtemos:
+
+$\begin{cases}
+    \cfrac{y+25}{2} = x \Rightarrow y + 25 = 2x \Rightarrow y = 2x - 25\\
+    \cfrac{z + 9}{2} = x \Rightarrow z + 9 = 2x \Rightarrow z = 2x - 9\\
+    \cfrac{w + 8}{2} = x \Rightarrow w + 8 = 2x \Rightarrow w = 2x - 8
+\end{cases}$
+
+Isso nos permite também calcular v e t em função de x:
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{
+    |>{\centering\arraybackslash}m{1.25cm}|>{\centering\arraybackslash}m{.9cm}|>{\centering\arraybackslash}m{.9cm}|
+    }
+     \hline
+     2x-25& 9 &v  \\\hline
+     8& x & 2x-8\\ \hline
+      t& 2x-9 & 25\\ \hline
+\end{tabular}}
+
+$\begin{cases}
+    \cfrac{v+25}{2} = 2x-8 \Rightarrow v + 25 = 4x-16 \Rightarrow v = 4x - 41\\
+    \cfrac{t+2x-25}{2} = 8 \Rightarrow t + 2x - 25 = 16 \Rightarrow t = -2x + 41
+\end{cases}$
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{
+    |>{\centering\arraybackslash}m{1.5cm}|>{\centering\arraybackslash}m{1.5cm}|>{\centering\arraybackslash}m{1.5cm}|
+    }
+     \hline
+     2x-25& 9 &4x - 41  \\\hline
+     8& x & 2x-8\\ \hline
+      -2x+41& 2x-9 & 25\\ \hline
+\end{tabular}}
+
+Segue, da terceira linha do quadriculado acima, que:
+
+$\cfrac{-2x+41+25}{2} = 2x-9 \Rightarrow -2x + 66 = 4x - 18 \Rightarrow 84 = 6x \Rightarrow x = \cfrac{84}{6} \Rightarrow x = 14$
+
+Utilizando esse valor encontrado de x, os outros valores podem ser facilmente
+calculados e o preenchimento final do quadriculado medmágico, nesse caso, é:
+
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{
+    |>{\centering\arraybackslash}m{1.5cm}|>{\centering\arraybackslash}m{1.5cm}|>{\centering\arraybackslash}m{1.5cm}|
+    }
+     \hline
+     3& 9 &15  \\\hline
+     8& 14 & 10\\ \hline
+      13& 19 & 25\\ \hline
+\end{tabular}}
+
+\solucao
+\textbf{item c)}
+
+Consideremos agora um quadrado medmágico qualquer, como o da figura abaixo
+
+\begin{figure}[H]
+    \begin{minipage}{.3\linewidth}
+        \begin{center}
+            {\renewcommand{\arraystretch}{1.5}
+            \begin{tabular}{
+                |>{\centering\arraybackslash}m{.5cm}|>{\centering\arraybackslash}m{.5cm}|>{\centering\arraybackslash}m{.5cm}|
+                }
+                 \hline
+                 a& b &c  \\\hline
+                 d& e & f\\ \hline
+                  g& h & i\\ \hline
+            \end{tabular}}
+        \end{center}
+    \end{minipage} $\Rightarrow$
+    \begin{minipage}{.3\linewidth}
+        $\begin{cases}
+            a + i = 2e \\
+            b + h = 2e \\ 
+            c + g = 2e \\
+            d + f = 2e
+        \end{cases}$
+    \end{minipage}
+\end{figure}
+
+$\Rightarrow$ a + b + c + d + e + f + g + h + i = 2e + 2e + 2e + 2e + e = 9e
+
+Como o número representado pela letra \underline{e} é um número inteiro, a soma de todos é múltipla de 9.
+
+Concluímos assim que em qualquer quadriculado medmágico a soma de todos os seus números é igual a 9 vezes o
+termo central.
+
+\end{solucoes}

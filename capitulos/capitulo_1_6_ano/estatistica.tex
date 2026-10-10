@@ -1,0 +1,170 @@
+\section{Probabilidade e Estatística}
+
+\questao{(OM$^3$SP 2026 - 1$^\circ$ fase ) Os professores de Matemática da Escola Marcelo Minervo dos Santos Pimentel, realizaram uma pesquisa com 480 pessoas. Os professores perguntava aos entrevistados qual gênero de filme eles preferiam: ação, comédia, anime, terror ou outros. Este gráfico mostra o percentual de pessoas que responderam à pesquisa.}
+
+        \begin{tikzpicture}[scale=.7]
+            \pie[
+                text=legend,
+                color={red!60, yellow!75, cyan!80, orange!75, blue!50}
+            ]{5/Ação, 35/Comédia, 20/Anime, 25/Terror, 15/Outros}
+        \end{tikzpicture}
+
+        Quantas pessoas responderam que preferem o gênero de filme anime?
+
+
+            \begin{enumerate}[label=\alph*)]
+                \item 96 pessoas
+                \item 105 pessoas
+                \item 90 pessoas
+                \item 85 pessoas
+            \end{enumerate}
+
+\begin{solucoes}{1}
+    \solucao
+    Para determinar a quantidade de pessoas que preferem o gênero de filme anima, observaremos qual a sua porcentagem no gráfico e depois calcularemos quanto equivale do total de pessoas entrevistadas, assim, temos:
+
+$\begin{WithArrows}[tikz={>=stealth, text width = 6cm, draw=black!70, text=black!70}, interline=2mm]
+    Anime =& 20\%\, de\, 480  \Arrow[rl]{Transformando em um produto} \\ 
+    Anime =& \dfrac{20}{100} \times 480   \\
+    Anime =& \dfrac{\cancel{20}}{\cancel{100}} \times 480 
+    \Arrow[ll]{Simplificando a fração por 20, temos}\\
+    Anime =& \dfrac{480}{4} \\
+    Anime =& 96
+\end{WithArrows}$
+
+Sendo assim, a quantidade de pessoas que preferem o gênero de filme Anime é 96
+
+ \textbf{ALTERNATIVA D}
+
+\end{solucoes}
+
+\questao{Para escolher 1 entre 4 estudantes para ser presidente do grêmio da Escola Marcelo Pimentel, o coordenador Jefferson estabeleceu como critério a maior média obtida com as notas dadas \textbf{à prova escrita}, \textbf{à entrevista} e a \textbf{apresentação de ideias}. Analise as notas obtidas pelos estudantes e descubra qual o estudante escolhido.}
+
+        \begin{figure}[H]
+        \centering
+            \begin{minipage}{.33\linewidth}
+                \begin{tabular}{|p{2.5cm}|}
+                    \hline
+                    \multicolumn{1}{|c|}{ESTUDANTE 1}\\
+                    \hline
+                    Prova: 8 \par
+                    Entrevista: 7 \par 
+                    Ideias: 6
+                    \\
+                    \hline
+                    
+                \end{tabular}
+            \end{minipage}
+            \begin{minipage}{.33\linewidth}
+                \begin{tabular}{|p{2.5cm}|}
+                    \hline
+                    \multicolumn{1}{|c|}{ESTUDANTE 2}\\
+                    \hline
+                    Prova: 8 \par
+                    Entrevista: 8 \par 
+                    Ideias: 7
+                    \\
+                    \hline
+                    
+                \end{tabular}
+            \end{minipage}
+            
+        \end{figure}
+
+\vspace*{-15pt}
+        \begin{figure}[H]
+            \centering
+            \begin{minipage}{.33\linewidth}
+                \begin{tabular}{|p{2.5cm}|}
+                    \hline
+                    \multicolumn{1}{|c|}{ESTUDANTE 3}\\
+                    \hline
+                    Prova: 7 \par
+                    Entrevista: 6 \par 
+                    Ideias: 7
+                    \\
+                    \hline
+                    
+                \end{tabular}
+            \end{minipage}
+            \begin{minipage}{.33\linewidth}
+                \begin{tabular}{|p{2.5cm}|}
+                    \hline
+                    \multicolumn{1}{|c|}{ESTUDANTE 4}\\
+                    \hline
+                    Prova: 8 \par
+                    Entrevista: 9 \par 
+                    Ideias: 5
+                    \\
+                    \hline
+                    
+                \end{tabular}
+            \end{minipage}
+           
+        \end{figure}
+
+        \begin{multicols}{2}
+            \begin{enumerate}[label=\alph*)]
+                \item ESTUDANTE 1
+                \item ESTUDANTE 2
+                \item ESTUDANTE 3
+                \item ESTUDANTE 4
+            \end{enumerate}
+        \end{multicols}
+
+\begin{solucoes}{1}
+\solucao
+
+Para descobrir qual estudante foi escolhido, é preciso calcular a média de cada um dos estudantes.
+
+\begin{multicols}{2}
+    Para o estudante 1, temos:
+
+$\begin{WithArrows}[tikz={>=stealth, text width= 6cm, draw=black!70, text=black!70}, interline=2mm]
+   M &= \dfrac{8+7+6}{3} \\
+   M &= \dfrac{21}{3} \\
+   M &= 7
+\end{WithArrows}$
+
+Média igual a 7.
+
+Para o estudante 2, temos:
+
+$\begin{WithArrows}[tikz={>=stealth, text width = 6cm, draw=black!70, text=black!70}, interline=2mm]
+   M &= \dfrac{8+8+7}{3}\\
+   M &= \dfrac{23}{3} \Arrow[ll]{Calculando o resultado da fração, temos aproximadamente}\\
+   M &= 7,6
+\end{WithArrows}$
+
+Média igual a 7,6.
+
+Para o estudante 3, temos:
+
+$\begin{WithArrows}[tikz={>=stealth, text width = 6cm, draw=black!70, text=black!70}, interline=2mm]
+    M &= \dfrac{7+6+7}{3} \\
+    M &= \dfrac{20}{3} \Arrow[ll]{Calculando o resultado da fração, temos aproximadamente}\\
+    M &= 6,6
+\end{WithArrows}$
+
+Média igual a 6,6.
+
+Para o estudante 4, temos:
+
+$\begin{WithArrows}[tikz={>=stealth, text width = 6cm, draw=black!70, text=black!70}, interline=2mm]
+    M &= \dfrac{8+9+5}{3} \\
+    M &= \dfrac{22}{3} \Arrow[ll]{Calculando o resultado da fração, temos aproximadamente}\\
+    M &= 7,3
+\end{WithArrows}$
+
+Média igual a 7,3.
+\end{multicols}
+
+Fazendo a comparação das médias obtidas por cada estudante, temos:
+
+estudante 2 $>$ estudante 4 $>$ estudante 1 $>$ estudante 3.
+
+Assim, o escolhido foi o \textbf{estudante 2}
+
+\textbf{ALTERNATIVA B}
+    
+\end{solucoes}

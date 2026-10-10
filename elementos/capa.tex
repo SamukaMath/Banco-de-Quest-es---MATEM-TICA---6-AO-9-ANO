@@ -1,0 +1,126 @@
+\begin{titlepage}
+
+\begin{tikzpicture}[remember picture,overlay]
+
+% Fundo
+\fill[Fundo]
+    (current page.south west)
+    rectangle
+    (current page.north east);
+
+% Faixa azul
+\fill[AzulPrincipal]
+    (current page.north west)
+    rectangle
+    ([xshift=0.38\paperwidth]current page.south west);
+
+% Círculos decorativos
+\fill[Turquesa]
+    ([xshift=0.25\paperwidth,yshift=-2cm]current page.north west)
+    circle (3cm);
+
+\fill[Laranja]
+    ([xshift=0.32\paperwidth,yshift=-7cm]current page.north west)
+    circle (1.5cm);
+
+\fill[Roxo]
+    ([xshift=0.20\paperwidth,yshift=-11cm]current page.north west)
+    circle (2.2cm);
+
+% Triângulo
+\node[
+    regular polygon,
+    regular polygon sides=3,
+    fill=Amarelo,
+    minimum size=4cm,
+    rotate=25
+] at ([xshift=0.28\paperwidth,yshift=-15cm]current page.north west) {};
+
+% Hexagono
+\node[
+    regular polygon,
+    regular polygon sides=7,
+    fill=cyan,
+    minimum size=4cm,
+    rotate=25
+] at ([xshift=0.1\paperwidth,yshift=-19cm]current page.north west) {};
+
+ires
+% Símbolos matemáticos
+\node[
+    text=white,
+    font=\fontsize{38}{40}\selectfont
+] at ([xshift=0.19\paperwidth,yshift=-4cm]current page.north west) {$\sum$};
+
+\node[
+    text=white,
+    font=\fontsize{32}{35}\selectfont
+] at ([xshift=0.12\paperwidth,yshift=-8cm]current page.north west) {$\pi$};
+
+\node[
+    text=white,
+    font=\fontsize{30}{35}\selectfont
+] at ([xshift=0.28\paperwidth,yshift=-19cm]current page.north west) {$\sqrt{x}$};
+
+\node[
+    text=white,
+    font=\fontsize{30}{35}\selectfont
+] at ([xshift=0.13\paperwidth,yshift=-23cm]current page.north west) {$\int{}$};
+
+\end{tikzpicture}
+
+\vspace*{3cm}
+
+\hspace*{0.42\textwidth}
+\begin{minipage}{0.57\textwidth}
+
+{\color{AzulPrincipal}
+\fontsize{17}{20}\selectfont
+\bfseries BANCO DE QUESTÕES
+}
+
+\vspace{0.5cm}
+
+{\color{AzulPrincipal}
+\fontsize{38}{42}\selectfont
+\bfseries MATEMÁTICA
+}
+
+\vspace{0.5cm}
+
+{\color{CinzaTexto}
+\Large
+6º ao 9º ano do Ensino Fundamental
+}
+
+\vspace{1.5cm}
+
+\begin{tcolorbox}[
+    colback=white,
+    colframe=Turquesa,
+    boxrule=1pt,
+    arc=8pt
+]
+\centering
+\large
+Questões organizadas por\\
+\textbf{Unidades Temáticas}
+\end{tcolorbox}
+
+\vspace{10cm}
+
+{\color{CinzaTexto}
+\large
+Organizadores
+\vspace{30pt}
+
+Prof. Me. Jadiel José Araújo da Silva Júnior \\
+Prof. Esp. Samuel de Sousa Apolinário \\
+Prof. Gabriel Dória de Mendonça
+}
+
+\end{minipage}
+
+\end{titlepage}
+
+\cleardoublepage

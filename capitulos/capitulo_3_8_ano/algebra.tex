@@ -1,0 +1,114 @@
+\section{Álgebra}
+
+\questao{(OM$^3$SP 2026 - 1ª Fase) Em um dia ensolarado Aldemir, coordenador dos Anos Iniciais, propôs um desafio matemático com as letras $M$ e $P$ que compõem a logo da escola. Ele associou essas letras a dois algarismos, do $0$ ao $9$, e escreveu em uma painel da escola que $MP+PM=121$ e $PM-PP=1$. Qual será o valor numérico encontrado para  $M$?}
+        \begin{multicols}{4}
+                \begin{enumerate}[label=\alph*)]
+                    \item 5
+                    \item 6
+                    \item 7
+                    \item 8
+                \end{enumerate}
+            \end{multicols}
+
+\begin{solucoes}{2}
+    \solucao
+Nesta questão, tem-se que $M$ e $P$ são algarismos, ou seja, estão entre os números inteiro de 0 a 9. Sabe-se também que  $MP+PM=121$ e $PM-PP=1$. Partindo de $MP+PM=121$, tem-se que, para gerar final 1, as opções são $0$ e $1$, $2$ e $9$, $3$ e $8$, $4$ e $7$ ou $5$ e $6$. Olhando para essas opções, a única que será prontamente descartada é $M=0$ e $P=1$, pois $01+10=11\neq 121$. Todas as outras somadas darão $121$. Com isso, é preciso notar que $PM-PP=1$ e, para isso acontecer, $M-P=1$. O único caso possível seria $M=6$ e $P=5$. Sendo assim, $M=6$.\\
+\textbf{ALTERNATIVA B}
+
+\solucao
+
+Podemos pensar de outra maneira e, com isso, podemos resolver de uma forma puramente algébrica. Assim, partindo da primeira informação, 
+\begin{equation*}
+MP+PM=121
+\end{equation*}
+\begin{equation*}
+    (10M+P)+(10P+M)=121
+\end{equation*}
+\begin{equation*}
+    (10M+M)+(10P+P)=121
+\end{equation*}
+\begin{equation*}
+    11M+11P=121
+\end{equation*}
+\begin{equation*}
+    11*(M+P)=121
+\end{equation*}
+\begin{equation*}
+    M+P=\frac{121}{11}=11
+\end{equation*}
+\begin{equation*}
+    M+P=11 \ (1)
+\end{equation*}
+
+Faremos a mesma coisa com a segunda informação,
+
+\begin{equation*}
+    PM-PP=1
+\end{equation*}
+\begin{equation*}
+    (10P+M)-(10P+P)=1
+\end{equation*}
+\begin{equation*}
+    M-11M+10M=1
+\end{equation*}
+\begin{equation*}
+    M-P=1 \ (2)
+\end{equation*}
+
+Somando $(1)$ e $(2)$,temos que
+
+\begin{equation*}
+  2M=12
+\end{equation*}
+\begin{equation*}
+    M=\frac{12}{2}=6
+\end{equation*}
+Com isso, determinamos que $M=6$. \\
+\textbf{ALTERNATIVA B}
+\end{solucoes}
+
+\questao{(OM$^3$SP 2026 - 1ª Fase) Na última semana, a Vice-Diretora Quitéria saiu ao portão de entrada da E.M.M.M.S.P. e percebeu que tinham alguns carros e algumas motos estacionadas na frente da escola. Ao entrar ela disse a Félix que o número total de automóveis, apenas carros e motos, presentes na frente da escola era de 12. Ela também contou e determinou que a quantidade de rodas era de 34. Com isso, Félix descobriu quantas motos e quantos carros ali estavam. Qual era o número de motos presentes naquele momento na frenta da E.M.M.M.S.P.?}
+        \begin{multicols}{4}
+                \begin{enumerate}[label=\alph*)]
+                    \item 5
+                    \item 6
+                    \item 7
+                    \item 8
+                \end{enumerate}
+            \end{multicols}
+
+\begin{solucoes}{2}
+
+\solucao
+    Tem-se aqui um clássico problema de sistema de equações do primeiro grau. Tome $C$ representando o número de carros e $M$ o número de motos. Convertendo as informações em equações, ter-se-á:
+        \begin{equation*}
+\begin{cases}
+  C+M=12\\
+     4C+2M=34 
+\end{cases}
+ \end{equation*}
+    Ao multiplicar por $-4$ a primeira equação. ter-se-á:
+        \begin{equation*}
+\begin{cases}
+    -4C+-4M=-48\\
+     4C+2M=34 
+\end{cases}
+ \end{equation*}   
+Somanda asduasequações acima,teremos
+\begin{equation*}
+    -2M=-14
+\end{equation*} 
+\begin{equation*}
+    M=\frac{14}{2}=7
+\end{equation*}
+Assim, na porta da escola havia 7 motos.\\
+\textbf{ALTERNATIVA C}
+
+\solucao
+
+Podemos resolver este problema de uma forma menos algébrica e mais aritmética. Pense o seguinte, se todos os veículos fossem motos teríamos $12*2=24$, todavia temos $34$ rodas. Sendo assim, temos 10 rodas a mais do que o número de motos e como cada carro possui o dobro de rodas de cada moto, devemos então dividir $\frac{10}{2}=5$. Logo, serão $5$ carros e assim $7$ motos.  \\
+\textbf{ALTERNATIVA C}
+
+\end{solucoes}
+
+

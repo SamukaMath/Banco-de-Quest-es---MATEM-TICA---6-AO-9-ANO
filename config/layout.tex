@@ -1,0 +1,231 @@
+% ==========================================================
+% PACOTES
+% ==========================================================
+\usepackage{multicol}
+\usepackage{fontspec}
+\usepackage{etoolbox}
+\usepackage{environ}
+\usepackage{float}
+\usepackage{witharrows}
+\usepackage{eso-pic, pgf-pie}
+\usepackage{pgfplots}
+\usepackage{cancel}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable}
+
+\newcommand{\canceldiv}[2]{%
+    \cancel{#1}^{\div #2}%
+}
+
+\renewcommand{\CancelColor}{\color{red}}
+
+\usepackage{polyglossia}
+\setmainlanguage{portuguese}
+\setotherlanguage{english}
+
+% Fonte
+\setmainfont{TeX Gyre Heros}
+
+
+% Matemática
+
+\usepackage{unicode-math}
+
+\setmathfont{Latin Modern Math}
+% Layout
+\usepackage[
+    a4paper,
+    top=2cm,
+    bottom=2cm,
+    left=1.5cm,
+    right=2.0cm,
+    headheight=15pt
+]{geometry}
+
+% TikZ
+\usepackage{tikz}
+\usetikzlibrary{
+    calc,
+    positioning,
+    shapes.geometric,
+    shapes.misc,
+    arrows.meta,
+    backgrounds,
+    decorations.pathmorphing,
+    fadings
+}
+
+% Caixas
+\usepackage{tcolorbox}
+\tcbuselibrary{
+    skins,
+    breakable
+}
+
+% Listas
+\usepackage{enumitem}
+
+% Links
+\usepackage[
+    colorlinks=true,
+    linkcolor=AzulPrincipal,
+    urlcolor=Roxo,
+    citecolor=AzulPrincipal
+]{hyperref}
+
+% Cabeçalho
+\usepackage{fancyhdr}
+
+% Controle de títulos
+\usepackage{titlesec}
+
+% Espaçamento
+\usepackage{setspace}
+\setstretch{1.08}
+
+% Imagens
+\usepackage{graphicx}
+
+% Tabelas
+\usepackage{array}
+\usepackage{booktabs}
+
+% ==========================================================
+% CONFIGURAÇÕES GERAIS
+% ==========================================================
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\setlist[itemize]{
+    leftmargin=*,
+    itemsep=2pt
+}
+
+\setlist[enumerate]{
+    leftmargin=*,
+    itemsep=4pt
+}
+
+% ==========================================================
+% CABEÇALHO E RODAPÉ
+% ==========================================================
+
+\pagestyle{fancy}
+
+\fancyhf{}
+
+\fancyhead[LE]{
+    \small\color{CinzaTexto}
+    Banco de Questões de Matemática
+}
+
+\fancyhead[RO]{
+    \small\color{CinzaTexto}
+    \leftmark
+}
+
+\fancyfoot[C]{
+    \tikz[baseline=-0.5ex]{
+        \node[
+            circle,
+            fill=AzulPrincipal,
+            text=white,
+            minimum size=0.65cm,
+            inner sep=0pt
+        ] {\small\thepage};
+    }
+}
+
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+
+% ==========================================================
+% CAPÍTULOS
+% ==========================================================
+
+\titleformat
+{\chapter}
+[display]
+{\normalfont\sffamily}
+{}
+{0pt}
+{%
+    \begin{tikzpicture}[overlay]
+        \node[
+            fill=AzulPrincipal,
+            text=white,
+            rounded corners=8pt,
+            inner xsep=15pt,
+            inner ysep=5pt
+        ] at (2.4,.3) {\Large\bfseries CAPÍTULO \thechapter};
+    \end{tikzpicture}
+    \hspace{5cm}
+    \Huge\bfseries
+}
+[
+    \vspace{-.9cm}
+    \color{Turquesa}
+    \rule{\textwidth}{3pt}
+]
+
+
+\titleformat
+{name=\chapter,numberless}
+[display]
+{\normalfont\sffamily}
+{}
+{0pt}
+{
+    \Huge\bfseries
+}
+[
+    \vspace{-1.1cm}
+    \color{Turquesa}
+    \rule{\textwidth}{3pt}
+]
+
+\titlespacing*{\chapter}
+{0pt}{-20pt}{30pt}
+
+% ==========================================================
+% SEÇÕES
+% ==========================================================
+
+\titleformat
+{\section}
+{\Large\bfseries\sffamily\color{AzulPrincipal}}
+{\thesection}
+{0.7em}
+{}
+
+\titleformat
+{\subsection}
+{\large\bfseries\sffamily\color{Roxo}}
+{\thesubsection}
+{0.7em}
+{}
+
+% =============================================================
+% AMBIENTE DE OBSERVAÇÃO OU DICAS
+% =============================================================
+
+\newtcolorbox{observacao}[1][Observação]{
+    colback=VerdeDestaqueFundo,
+    colframe=VerdeDestaque,
+    boxrule=0pt,
+    leftrule=4pt,
+    arc=2pt,
+    left=10pt,
+    right=10pt,
+    top=8pt,
+    bottom=8pt,
+    enhanced,
+    before upper={%
+        \textcolor{VerdeDestaque}{\textbf{#1}}
+        \par\smallskip
+    },
+}

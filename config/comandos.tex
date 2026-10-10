@@ -1,0 +1,191 @@
+% ============================================================
+% CAPÍTULOS SEM NUMERAÇÃO
+% ============================================================
+
+\newcommand{\capitulopreliminar}[1]{%
+    \cleardoublepage
+    \chapter*{#1}
+    \addcontentsline{toc}{chapter}{#1}
+    \markboth{#1}{#1}
+}
+
+% ==========================================================
+% TEOREMAS
+% ==========================================================
+
+
+% ==========================================================
+% ARMAZENAMENTO DE SOLUÇÃO
+% ==========================================================
+
+\newcounter{contsolucao}
+
+\newenvironment{solucoes}[1]{%
+    \setcounter{contsolucao}{0}%
+    \def\totalSolucoes{#1}%
+    \par\medskip
+}{%
+    \ifnum\value{contsolucao}>0
+        \end{caixasolucao}
+    \fi
+    \par\medskip
+}
+
+% ==================================================
+% COMANDO DE SOLUÇÃO
+% ==================================================
+
+\newcommand{\solucao}{%
+    \ifnum\value{contsolucao}>0
+        \end{caixasolucao}
+    \fi
+    \stepcounter{contsolucao}%
+    \begin{caixasolucao}
+    \textbf{\textcolor{VermelhoSolucao}{Solução%
+        \ifnum\totalSolucoes>1
+            \space
+            \ifnum\value{contsolucao}<10
+                0%
+            \fi
+            \arabic{contsolucao}%
+        \fi
+    }}%
+    \par\smallskip
+}
+% ==================================================
+% CONTADOR DE QUESTÕES
+% ==================================================
+
+\newcounter{numeroquestao}
+
+\renewcommand{\thenumeroquestao}{%
+    \ifnum\value{numeroquestao}<10
+        0\arabic{numeroquestao}%
+    \else
+        \arabic{numeroquestao}%
+    \fi
+}
+
+\makeatletter
+
+\let\sectionoriginal\section
+
+\renewcommand{\section}{%
+    \@ifstar
+        {\sectionsemnumero}
+        {\sectioncomnumero}%
+}
+
+\newcommand{\sectioncomnumero}[1]{%
+    \setcounter{numeroquestao}{0}%
+    \sectionoriginal{#1}%
+}
+
+\newcommand{\sectionsemnumero}[1]{%
+    \setcounter{numeroquestao}{0}%
+    \sectionoriginal*{#1}%
+}
+
+\makeatother
+
+% ============================================================
+% ESTILO DAS QUESTÕES
+%=============================================================
+
+\renewcommand{\questao}[1]{%
+    \refstepcounter{numeroquestao}
+    \noindent
+    \hangindent=0cm
+    \hangafter=-1
+    \makebox[2.85cm][l]{
+    \begin{tikzpicture}[baseline=-.25cm]
+        \node[
+            fill=AzulPrincipal,
+            text=white,
+            rounded corners=3pt,
+            minimum width=1cm,
+            minimum height=0.8cm,
+            font=\bfseries
+        ] (numero) {Questão \thenumeroquestao};
+        \draw[
+            Turquesa,
+            line width=2pt
+        ]
+        ([xshift=.3cm, yshift=.37cm]numero.east) -- ++(\dimexpr\textwidth-2.95cm\relax,0);
+        
+    \end{tikzpicture}%
+    }
+    #1
+    \par 
+    \vspace{.3cm}
+    }
+
+
+% =====================================================================
+% PÁGINA DEDICADA AOS AUTORES
+% =====================================================================
+
+\newcommand{\paginaautores}{%
+    \cleardoublepage
+    \thispagestyle{empty}
+
+    \begin{center}
+
+        \vspace*{1cm}
+
+        {\Large\bfseries\color{AzulPrincipal}
+        AUTORES}
+
+        \vspace{0.3cm}
+
+        {\color{Turquesa}\rule{5cm}{2pt}}
+
+        \vspace{1.2cm}
+
+        % Autor 1
+        {\large\bfseries\color{AzulPrincipal}
+        Jadiel José Araújo da Silva Júnior}
+
+        \vspace{0.2cm}
+
+        {\normalsize
+        Licenciado em Matemática - UFAL\\
+        Mestre em Matemática - UFAL}
+
+        \vspace{1cm}
+
+        % Autor 2
+        {\large\bfseries\color{AzulPrincipal}
+        Samuel de Sousa Apolinário}
+
+        \vspace{0.2cm}
+
+        {\normalsize
+        Licenciado em Matemática - UNEAL\\
+        Especialista em Estatística Aplicada - FFOCUS\\
+        Especialista em Matemática Orientada a Computação Gráfica - FFOCUS}
+
+        \vspace{1cm}
+
+        % Autor 3
+        {\large\bfseries\color{AzulPrincipal}
+        Gabriel Dória de Mendonça}
+
+        \vspace{0.2cm}
+
+        {\normalsize
+        Licenciado em Matemática - UFAL}
+
+        \vfill
+
+        {\color{Turquesa}\rule{5cm}{1pt}}
+
+        \vspace{0.3cm}
+
+        {\small
+        Banco de Questões de Matemática}
+
+    \end{center}
+
+    \cleardoublepage
+}

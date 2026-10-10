@@ -1,0 +1,81 @@
+\section{Álgebra}
+
+\questao{(OM$^3$SP 2026 - 1ª Fase) Roberta tem uma loja de roupas que trabalha exclusivamente com camisas. Ela vende todas as camisas por um mesmo preço, todas custam $R\$ \ 40,00$, e vendia cerca de $20$ camisas por dia. Ela fez uma promoção e percebeu que a cada $R\$ \ 1,00$ de desconto ela vendia $10$ camisas a mais. Qual será o valor da camisa para que Roberta tenha o faturamento máximo?}
+         \begin{multicols}{4}
+            \begin{enumerate}[label=\alph*)]
+                \item $21$
+                \item $28$
+                \item $36$
+                \item $45$
+            \end{enumerate}
+        \end{multicols}
+
+\begin{solucoes}{1}
+    \solucao
+Tome como $x$ como o valor do desconto. Considere $P(x)$ a função que representa o preço e $Q(x)$ a função que representa a quantidade. Assim, teremos:
+        \begin{equation*}
+            V(x)=P(x)\cdot Q(x)
+        \end{equation*}
+            \begin{equation*}
+            V(x)=(40-x)(20+10x)
+        \end{equation*}
+          \begin{equation*}
+            V(x)=-10x^2+380x+800
+        \end{equation*}
+        Para haver faturamento máximo, $x_v=\frac{-b}{2\cdot a}=\frac{-380}{2\cdot (-10
+        )}=\frac{-380}{-20}=19$. Sendo assim, como $x=19$, o novo valor da camisa será de $40-19=21$.\\
+        \textbf{ALTERNATIVA A}
+\end{solucoes}
+
+\questao{(Elaboração própria) O Professor Samuel afirmou que $p$ é um número primo, e p$\geq5$, o valor da expressão algébrica $p^2 - 1$ será sempre um múltiplo de qual dos números abaixo?}
+
+\begin{multicols}{4}
+    \begin{enumerate}[label=\alph*) ]
+        \item 10
+        \item 24
+        \item 13
+        \item 19
+    \end{enumerate}
+\end{multicols}
+\begin{solucoes}{2}
+    \solucao
+    \textbf{Testando valores} temos, como a questão afirmar que a regra vale para qualquer número primo, maior ou igual a 5,  só precisamos testar o primeiro valor número que se encaixa nessa regra para eliminar as alternativas incorretas.
+
+    Primeiro, escolhemos o menor número primo maior ou igual a 5, que no caso é o próprio 5.
+
+    Substituindo na expressão, temos:
+
+    $$p^2-1 = 5^2 - 1 = 25 -1 = 24$$
+
+    Analisando as alternativas, o 24 não é múltiplo do 10, nem do 13 e nem do 19, sendo apenas múltiplo do próprio 24. Assim, já resolvemos a questão.
+
+    Porem, para ter certeza, vamos testar para o próximo número primeiro depois do 5, usando o 7.
+
+    Temos o seguinte resultado:
+
+    $$7^2 - 1 = 49 -1 = 48$$
+
+    como 48 é 24 $\times$ 2, ele também é um múltiplo de 24, confirmando a regra.
+
+    \textbf{ALTERNATIVA B}
+
+    \solucao
+
+    \textbf{Demonstração algébrica}, podemos utilizar também os produtos notáveis para realizar a solução dessa questão.
+
+    Temos que:
+
+    $$p^2 - 1 = (p+1)(p-1)$$
+
+    e como \textbf{p} é um número primo maior que 2, então ele é impar. Logo (p-1) e (p+1) são dois números pares consecutivos, exemplo, se p = 7, teremos 6 e 8.\\
+
+    Sempre que multiplicamos dois pares consecutivos, um deles obrigatoriamente é múltiplo de 2 e o outro é múltiplo de 4 e a multiplicação deles garantem que o resultado seja um múltiplo de 2 $\times$ 4 = 8. Assim, garantimos a divisibilidade por 8.\\
+
+    para garantir a divisibilidade por 3, temos que em qualquer sequencia  de três números consecutivos como (p-1), p, (p+1), obrigatoriamente um deles é múltiplo de 3. \\
+
+    Como p é primo maior que 3, o próprio p não pode ser múltiplo de 3, assim, (p-1) ou (p+1) será múltiplo de 3.\\
+
+    Se a multiplicação de (p-1)(p+1) é divisível por 8 e também por 3, então obrigatoriamente tem que ser divisível  por 3 $\times$ 8 = 24.
+
+    \textbf{ALTERNATIVA B}
+\end{solucoes}
