@@ -1,0 +1,37 @@
+name: Compilar e publicar PDF do LaTeX
+
+on:
+  push:          # roda automaticamente quando você envia ou altera arquivos
+    branches: [ "main" ]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write   # permite que o GitHub Actions envie o PDF para o repositório
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Baixar o código
+        uses: actions/checkout@v4
+
+      - name: 🧰 Instalar LaTeX completo
+        run: sudo apt-get update && sudo apt-get install -y texlive-full
+
+      - name: 🏗️ Compilar o documento
+        run: |
+          xelatex -interaction=nonstopmode -shell-escape main.tex
+          xelatex -interaction=nonstopmode -shell-escape main.tex
+
+      - name: 🧩 Renomear o PDF final
+        run: mv main.pdf Banco_de_questoes.pdf
+
+      - name: 📤 Fazer commit automático do PDF
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+          git add latex_iniciante.pdf
+          git commit -m "🧾 PDF 'Banco_de_questoes.pdf' atualizado automaticamente"
+          git push
