@@ -2,176 +2,378 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Banco de Questões de Matemática</title>
+  <title>Banco de Questões | Matemática</title>
+  <meta name="description"
+        content="Banco de Questões de Matemática para professores e estudantes do Ensino Fundamental.">
 
-    <meta name="description"
-          content="Banco de questões de Matemática para o Ensino Fundamental, do 6º ao 9º ano.">
+  <meta name="theme-color" content="#173F5F">
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+  <style>
+    :root {
+      --azul: #173F5F;
+      --turquesa: #087E8B;
+      --fundo: #F4F7FB;
+      --texto: #253746;
+      --branco: #FFFFFF;
+    }
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            color: #173F5F;
-            background: #f5f8fc;
-            line-height: 1.7;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        header {
-            background: #173F5F;
-            color: white;
-            padding: 24px 8%;
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        header h1 {
-            margin: 0;
-            font-size: 1.8rem;
-        }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--fundo);
+      color: var(--texto);
+      line-height: 1.7;
+    }
 
-        nav a {
-            color: white;
-            margin-right: 20px;
-            text-decoration: none;
-        }
+    a {
+      text-decoration: none;
+    }
 
-        .hero {
-            background: linear-gradient(135deg, #173F5F, #087E8B);
-            color: white;
-            padding: 65px 8%;
-        }
+    .container {
+      width: min(1080px, 90%);
+      margin: auto;
+    }
 
-        .hero h2 {
-            font-size: 2.4rem;
-            margin: 0 0 12px;
-        }
+    header {
+      background: var(--azul);
+      color: var(--branco);
+      padding: 20px 0;
+    }
 
-        main {
-            max-width: 1000px;
-            margin: 35px auto;
-            padding: 0 20px;
-        }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
 
-        .card {
-            background: white;
-            padding: 28px;
-            margin-bottom: 24px;
-            border-radius: 12px;
-            box-shadow: 0 4px 18px #173f5f12;
-        }
+    .logo {
+      color: white;
+      font-size: 1.25rem;
+      font-weight: bold;
+    }
 
-        .botao {
-            display: inline-block;
-            background: #1677e8;
-            color: white;
-            padding: 12px 22px;
-            margin: 8px 8px 8px 0;
-            border-radius: 7px;
-            text-decoration: none;
-            font-weight: bold;
-        }
+    nav {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
 
-        .botao:hover {
-            background: #105cb5;
-        }
+    nav a {
+      color: white;
+      font-size: 0.95rem;
+    }
 
-        footer {
-            background: #173F5F;
-            color: white;
-            text-align: center;
-            padding: 24px;
-            margin-top: 50px;
-        }
+    nav a:hover {
+      color: #83DDE3;
+    }
 
-        @media (max-width: 600px) {
-            .hero h2 {
-                font-size: 1.8rem;
-            }
+    .hero {
+      background: linear-gradient(135deg, #173F5F, #087E8B);
+      color: white;
+      padding: 85px 0;
+    }
 
-            header h1 {
-                font-size: 1.4rem;
-            }
-        }
-    </style>
+    .hero h1 {
+      max-width: 760px;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1.15;
+      margin-bottom: 22px;
+    }
+
+    .hero p {
+      max-width: 650px;
+      font-size: 1.1rem;
+      margin-bottom: 28px;
+    }
+
+    .botao {
+      display: inline-block;
+      padding: 12px 22px;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .botao-claro {
+      background: white;
+      color: var(--azul);
+    }
+
+    .botao-claro:hover {
+      background: #E5F4F7;
+    }
+
+    .botao-azul {
+      background: var(--azul);
+      color: white;
+    }
+
+    .botao-azul:hover {
+      background: var(--turquesa);
+    }
+
+    main {
+      padding: 48px 0;
+    }
+
+    section {
+      scroll-margin-top: 24px;
+    }
+
+    .secao {
+      margin-bottom: 42px;
+    }
+
+    .secao h2 {
+      color: var(--azul);
+      font-size: 1.8rem;
+      margin-bottom: 14px;
+    }
+
+    .pdf-card {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+      gap: 24px;
+      background: white;
+      padding: 30px;
+      border-radius: 14px;
+      border: 1px solid #DCE7F0;
+      box-shadow: 0 6px 24px #173F5F0D;
+    }
+
+    .pdf-icon {
+      font-size: 3.5rem;
+    }
+
+    .pdf-card h2 {
+      color: var(--azul);
+      margin-bottom: 8px;
+    }
+
+    .acoes {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .detalhes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    .detalhe {
+      background: white;
+      border: 1px solid #DCE7F0;
+      border-radius: 12px;
+      padding: 22px;
+    }
+
+    .detalhe h3 {
+      color: var(--azul);
+      margin-bottom: 8px;
+    }
+
+    .futuro {
+      border-left: 4px solid var(--turquesa);
+      background: #EAF5F7;
+      padding: 24px;
+      border-radius: 8px;
+    }
+
+    footer {
+      background: var(--azul);
+      color: white;
+      text-align: center;
+      padding: 28px 0;
+    }
+
+    footer a {
+      color: #A8E6EA;
+    }
+
+    @media (max-width: 650px) {
+      .navbar {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      nav {
+        gap: 14px;
+      }
+
+      .hero {
+        padding: 58px 0;
+      }
+
+      .pdf-card {
+        grid-template-columns: 1fr;
+        padding: 22px;
+      }
+
+      .detalhes {
+        grid-template-columns: 1fr;
+      }
+
+      .acoes .botao {
+        text-align: center;
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-    <h1>∑ Banco de Questões</h1>
-    <nav>
+  <header>
+    <div class="container navbar">
+      <a class="logo" href="#inicio">∑ Banco de Questões</a>
+
+      <nav aria-label="Navegação principal">
         <a href="#inicio">Início</a>
+        <a href="#material">Material</a>
         <a href="#sobre">Sobre</a>
-        <a href="#pdf">Material em PDF</a>
-    </nav>
-</header>
+        <a href="#publicacoes">Publicações</a>
+      </nav>
+    </div>
+  </header>
 
-<section class="hero" id="inicio">
-    <h2>Banco de Questões de Matemática</h2>
-    <p>Material didático para o Ensino Fundamental — 6º ao 9º ano.</p>
-    <p>Aprender Matemática começa com boas perguntas.</p>
-</section>
+  <section class="hero" id="inicio">
+    <div class="container">
+      <h1>Matemática se aprende resolvendo boas questões.</h1>
 
-<main>
-    <section class="card" id="pdf">
-        <h2>📘 Acesse o material</h2>
-        <p>
-            Consulte o banco de questões de Matemática em PDF.
-            Ideal para estudos, revisões e preparação de atividades.
-        </p>
+      <p>
+        Um banco de questões elaborado para apoiar o ensino e a
+        aprendizagem da Matemática no Ensino Fundamental,
+        do 6º ao 9º ano.
+      </p>
 
-        <a class="botao"
-           href="./Banco_de_questoes.pdf"
-           target="_blank"
-           rel="noopener">
-            Visualizar PDF
-        </a>
+      <a class="botao botao-claro" href="#material">
+        Conheça o material ↓
+      </a>
+    </div>
+  </section>
 
-        <a class="botao"
-           href="./Banco_de_questoes.pdf"
-           download>
-            Baixar PDF
-        </a>
+  <main class="container">
+
+    <section class="secao" id="material">
+      <div class="pdf-card">
+        <div class="pdf-icon" aria-hidden="true">📘</div>
+
+        <div>
+          <h2>Banco de Questões de Matemática</h2>
+
+          <p>
+            Consulte o material em PDF, com questões organizadas
+            para apoiar atividades, revisões e estudos.
+          </p>
+
+          <div class="acoes">
+            <a class="botao botao-azul"
+               href="./Banco_de_questoes.pdf"
+               target="_blank"
+               rel="noopener">
+              Visualizar PDF
+            </a>
+
+            <a class="botao botao-azul"
+               href="./Banco_de_questoes.pdf"
+               download="Banco_de_questoes.pdf">
+              Baixar PDF ↓
+            </a>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section class="card" id="sobre">
-        <h2>Sobre o projeto</h2>
-        <p>
-            Este projeto reúne questões de Matemática organizadas
-            para apoiar professores e estudantes do 6º ao 9º ano.
-            O material é desenvolvido em LaTeX, buscando clareza,
-            organização e qualidade na apresentação das atividades.
-        </p>
+    <section class="secao" id="sobre">
+      <h2>Sobre o projeto</h2>
 
-        <h3>Conteúdos</h3>
-        <ul>
-            <li>Números e operações</li>
-            <li>Álgebra</li>
-            <li>Geometria</li>
-            <li>Grandezas e medidas</li>
-            <li>Probabilidade e Estatística</li>
-        </ul>
+      <p>
+        Este projeto tem como objetivo disponibilizar recursos
+        educacionais de Matemática para professores e estudantes.
+        O banco de questões é desenvolvido em LaTeX, com atenção
+        à organização, à clareza e à apresentação do conteúdo.
+      </p>
+
+      <div class="detalhes">
+        <article class="detalhe">
+          <h3>📐 Conteúdos</h3>
+          <p>
+            Números, Álgebra, Geometria, Grandezas e Medidas,
+            Probabilidade e Estatística.
+          </p>
+        </article>
+
+        <article class="detalhe">
+          <h3>🎓 Público-alvo</h3>
+          <p>
+            Professores e estudantes do 6º ao 9º ano
+            do Ensino Fundamental.
+          </p>
+        </article>
+
+        <article class="detalhe">
+          <h3>💻 Desenvolvimento</h3>
+          <p>
+            Material elaborado em LaTeX e disponibilizado
+            por meio do GitHub Pages.
+          </p>
+        </article>
+      </div>
     </section>
 
-    <section class="card">
-        <h2>Sobre os autores</h2>
-        <p>
-            Prof. Me. Jadiel José Araújo da Silva Júnior,
-            Prof. Samuel Apolinário e
-            Prof. Gabriel Dória de Mendonça.
-        </p>
-    </section>
-</main>
+    <section class="secao" id="publicacoes">
+      <h2>Publicações e novidades</h2>
 
-<footer>
-    <p>Banco de Questões de Matemática</p>
-    <p>Material educacional desenvolvido em LaTeX.</p>
-</footer>
+      <div class="futuro">
+        <h3>Um espaço para compartilhar conhecimento.</h3>
+        <p>
+          Futuramente, esta página poderá reunir artigos,
+          atividades, tutoriais de LaTeX e outros materiais
+          didáticos de Matemática.
+        </p>
+      </div>
+    </section>
+
+    <section class="secao">
+      <h2>Autores</h2>
+
+      <p>
+        Prof. Me. Jadiel José Araújo da Silva Júnior,
+        Prof. Samuel Apolinário e
+        Prof. Gabriel Dória de Mendonça.
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Banco de Questões de Matemática</p>
+      <p>Um projeto dedicado ao ensino e à aprendizagem.</p>
+      <p>
+        <a href="#inicio">Voltar ao início ↑</a>
+      </p>
+    </div>
+  </footer>
 
 </body>
 </html>
