@@ -1,37 +1,62 @@
-name: Compilar e publicar PDF do LaTeX
+
+name: Compilar e publicar site e PDF
 
 on:
-  push:          # roda automaticamente quando você envia ou altera arquivos
-    branches: [ "main" ]
+  push:
+    branches: ["main"]
   pull_request:
   workflow_dispatch:
 
 permissions:
-  contents: write   # permite que o GitHub Actions envie o PDF para o repositório
+  contents: read
 
 jobs:
   build:
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
 
     steps:
-      - name: 📥 Baixar o código
+      - name: Baixar o código
         uses: actions/checkout@v4
 
-      - name: 🧰 Instalar LaTeX completo
-        run: sudo apt-get update && sudo apt-get install -y texlive-full
-
-      - name: 🏗️ Compilar o documento
+      - name: Instalar LaTeX
         run: |
-          xelatex -interaction=nonstopmode -shell-escape main.tex
-          xelatex -interaction=nonstopmode -shell-escape main.tex
+          sudo apt-get update
+          sudo apt-get install -y texlive-full
 
-      - name: 🧩 Renomear o PDF final
-        run: mv main.pdf Banco_de_questoes.pdf
-
-      - name: 📤 Fazer commit automático do PDF
+      - name: Compilar PDF com XeLaTeX
         run: |
-          git config --global user.name "github-actions"
-          git config --global user.email "actions@github.com"
-          git add Banco_de_questoes.pdf
-          git commit -m "🧾 PDF 'Banco_de_questoes.pdf' atualizado automaticamente"
-          git push
+          xelatex -interaction=nonstopmode -halt-on-error -file-line-error -shell-escape main.tex
+          xelatex -interaction=nonstopmode -halt-on-error -file-line-error -shell-escape main.tex
+
+      - name: Preparar arquivos do site
+        run: |
+          mkdir -p _site
+          cp index.html _site/
+          cp main.pdf _site/Banco_de_questoes.pdf
+
+      - name: Configurar GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Enviar arquivos para publicação
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+  deploy:
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Publicar site
+        id: deployment
+        uses: actions/deploy-pages@v4
